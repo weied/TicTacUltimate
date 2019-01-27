@@ -36,15 +36,15 @@ class ttmini:
         return self.winner
 
     def isTaken(self,xPos,yPos):
-        return self.mBoard[xPos][yPos] != ""
+        return self.mBoard[xPos][yPos]["text"] != ""
 
     def click(self,player,xPos,yPos):
         global bclick
         if ~(ttmini.isTaken(xPos,yPos)):
             if player:
-                self.mBoard[xPos][yPos]= "X"
+                self.mBoard[xPos][yPos]["text"]= "X"
             else:
-                self.mBoard[xPos][yPos] = "O"
+                self.mBoard[xPos][yPos]["text"] = "O"
             bclick = ~bclick
 #
 # def ttt(buttons):
