@@ -1,4 +1,4 @@
-import numpy
+#import numpy
 import os
 import tkinter.messagebox
 from tkinter import *
