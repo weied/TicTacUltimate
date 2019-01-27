@@ -1,6 +1,8 @@
-from tkinter import *
 import numpy
-tk=Tk()
+import tkinter.messagebox
+from tkinter import *
+
+tk = Tk()
 tk.title("Tic Tac Toe")
 
 bclick = True
@@ -8,17 +10,17 @@ bclick = True
 def ttt(buttons):
      global bclick
      if buttons["text"] == " " and bclick == True:
-         buttons["text"] = "X"
-         bclick = False
+          buttons["text"] = "X"
+          bclick = False
      elif buttons["text"] == " " and bclick == False:
           buttons["text"] = "O"
           bclick = True
 
-     elif(button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X'):
+     if(button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X'):
           tkinter.messagebox.showinfo("Player X","Winner is X !!!")
-     elif(button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == 'X'):   #123
-          tkinter.messagebox.showinfo("Player X","Winner is X !!!")                        #456
-                                                                                           #789    
+          sys.exit(0) #closes window after user clicks ok
+     elif(button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == 'X'):
+          tkinter.messagebox.showinfo("Player X","Winner is X !!!")
      elif(button7['text'] =='X' and button8['text'] == 'X' and button9['text'] == 'X'):
           tkinter.messagebox.showinfo("Player X","Winner is X !!!")
      elif(button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == 'X'):
