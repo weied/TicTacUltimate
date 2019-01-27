@@ -1,4 +1,5 @@
 import numpy
+import os
 import tkinter.messagebox
 from tkinter import *
 
@@ -6,6 +7,13 @@ tk = Tk()
 tk.title("Tic Tac Toe")
 
 bclick = True
+
+def restart_program():
+    """Restarts the current program.
+    Note: this function does not return. Any cleanup action (like
+    saving data) must be done before calling this function."""
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 def ttt(buttons):
      global bclick
@@ -25,8 +33,8 @@ def ttt(buttons):
           button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X'or
           button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X'or
           button7['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
-          tkinter.messagebox.showinfo("Player O",'Winner is O !!!!')
-          sys.exit()
+          tkinter.messagebox.showinfo("Player X",'Winner is X !!!!')
+          restart_program()
           
      if(button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O'or
           button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O'or
@@ -38,8 +46,7 @@ def ttt(buttons):
           button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O'or
           button7['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
           tkinter.messagebox.showinfo("Player O",'Winner is O !!!!')
-          sys.exit()
-
+          restart_program()
 
 
 buttons=StringVar()
@@ -72,3 +79,4 @@ button9 = Button(tk,text=' ',font=('Times 20 bold'),bg='gray',fg='white',height=
 button9.grid(row=3,column=2,sticky = S+N+E+W)
 
 tk.mainloop()
+
