@@ -25,7 +25,7 @@ def ttt(buttons):
           button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X'or
           button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X'or
           button7['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
-          tkinter.messagebox.showinfo("Player O",'Winner is O !!!!')
+          tkinter.messagebox.showinfo("Player X",'Winner is X !!!!')
           sys.exit()
           
      if(button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O'or
